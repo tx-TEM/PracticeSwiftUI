@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct TestView: View {
     @State var count = 1
 
     var body: some View {
@@ -41,8 +41,8 @@ struct ContentView: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct TestView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        TestView()
     }
 }

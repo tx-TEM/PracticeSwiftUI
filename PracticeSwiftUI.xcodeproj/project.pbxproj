@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6F13FF31235F2B980040461A /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F13FF30235F2B980040461A /* TestView.swift */; };
 		6F9B940D234627B500A737A9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F9B940C234627B500A737A9 /* AppDelegate.swift */; };
 		6F9B940F234627B500A737A9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F9B940E234627B500A737A9 /* SceneDelegate.swift */; };
 		6F9B9411234627B500A737A9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F9B9410234627B500A737A9 /* ContentView.swift */; };
@@ -35,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6F13FF30235F2B980040461A /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
 		6F9B9409234627B500A737A9 /* PracticeSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PracticeSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6F9B940C234627B500A737A9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6F9B940E234627B500A737A9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -76,6 +78,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6F13FF2F235F2B650040461A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				6F9B9410234627B500A737A9 /* ContentView.swift */,
+				6F13FF30235F2B980040461A /* TestView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		6F9B9400234627B400A737A9 = {
 			isa = PBXGroup;
 			children = (
@@ -99,9 +110,9 @@
 		6F9B940B234627B500A737A9 /* PracticeSwiftUI */ = {
 			isa = PBXGroup;
 			children = (
+				6F13FF2F235F2B650040461A /* View */,
 				6F9B940C234627B500A737A9 /* AppDelegate.swift */,
 				6F9B940E234627B500A737A9 /* SceneDelegate.swift */,
-				6F9B9410234627B500A737A9 /* ContentView.swift */,
 				6F9B9412234627BC00A737A9 /* Assets.xcassets */,
 				6F9B9417234627BC00A737A9 /* LaunchScreen.storyboard */,
 				6F9B941A234627BC00A737A9 /* Info.plist */,
@@ -216,7 +227,7 @@
 				};
 			};
 			buildConfigurationList = 6F9B9404234627B400A737A9 /* Build configuration list for PBXProject "PracticeSwiftUI" */;
-			compatibilityVersion = "Xcode 9.3";
+			compatibilityVersion = "Xcode 11.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -267,6 +278,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6F13FF31235F2B980040461A /* TestView.swift in Sources */,
 				6F9B940D234627B500A737A9 /* AppDelegate.swift in Sources */,
 				6F9B940F234627B500A737A9 /* SceneDelegate.swift in Sources */,
 				6F9B9411234627B500A737A9 /* ContentView.swift in Sources */,
