@@ -16,8 +16,12 @@ struct ContentView: View {
                     NavigationLink(destination: TestView()) {
                         Text("TestView")
                     }
+
+                    NavigationLink(destination: ButtonView()) {
+                        Text("ButtonExample")
+                    }
                 }
-            }.navigationBarTitle(Text("UIサンプル"))
+            }.navigationBarTitle(Text("UIサンプル"), displayMode: .inline)
         }
     }
 }
