@@ -20,6 +20,10 @@ struct ContentView: View {
                     NavigationLink(destination: ButtonView()) {
                         Text("ButtonExample")
                     }
+
+                    NavigationLink(destination: BottomSheetView()) {
+                        Text("BottomSheet")
+                    }
                 }
             }.navigationBarTitle(Text("UIサンプル"), displayMode: .inline)
         }
