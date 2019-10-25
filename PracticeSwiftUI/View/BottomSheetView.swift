@@ -22,10 +22,12 @@ struct BottomSheetView: View {
                     })
                 }
 
-                BottomSheet(isActive: self.show, dissmissAction: { self.show.toggle() }) {
+                BottomSheet(isActive: self.show, dissmissAction: { withAnimation { self.show.toggle() } }) {
                     VStack(alignment: .center, spacing: 0) {
                         Button(action: {
-                            self.show.toggle()
+                            withAnimation {
+                                self.show.toggle()
+                            }
 
                         }, label: {
                             Text("Close BottomSheet")
@@ -50,7 +52,6 @@ struct BottomSheetView_Previews: PreviewProvider {
 }
 
 struct BottomSheet<Content:View> : View {
-    private var contentHeight: CGFloat = 0
 
     var isActive = false
     var dissmissAction: () -> ()
@@ -66,18 +67,20 @@ struct BottomSheet<Content:View> : View {
     }
 
     var body: some View {
-        VStack(spacing: 0) {
+        ZStack {
             if isActive {
                 Color(.black).opacity(0.6)
                     .onTapGesture {
                         self.dissmissAction()
-                    }
-                    .transition(.move(edge: .bottom))
+                }
+            }
 
-                self.content()
-                    .transition(.move(edge: .bottom))
+            VStack(spacing: 0) {
+                if isActive {
+                    Spacer()
+                    self.content().transition(.move(edge: .bottom))
+                }
             }
         }
-
     }
 }
