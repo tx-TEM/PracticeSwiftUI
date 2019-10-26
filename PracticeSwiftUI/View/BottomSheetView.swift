@@ -53,6 +53,7 @@ struct BottomSheetView_Previews: PreviewProvider {
 
 struct BottomSheet<Content:View> : View {
 
+    @State private var draggedOffset = CGSize.zero
     @Binding var isActive: Bool
     let content: () -> Content
 
@@ -70,7 +71,21 @@ struct BottomSheet<Content:View> : View {
             VStack(spacing: 0) {
                 if isActive {
                     Spacer()
-                    self.content().transition(.move(edge: .bottom))
+                    self.content()
+                        .transition(.move(edge: .bottom))
+                        .animation(.spring())
+                        .offset(y: self.draggedOffset.height)
+                        .gesture(
+                            DragGesture()
+                                .onChanged { value in
+                                    if value.translation.height > 0 {
+                                        self.draggedOffset = value.translation
+                                    }
+                                }
+                                .onEnded(){ value in
+                                    self.draggedOffset = .zero
+                                }
+                            )
                 }
             }
         }
