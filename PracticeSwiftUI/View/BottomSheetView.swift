@@ -22,7 +22,7 @@ struct BottomSheetView: View {
                     })
                 }
 
-                BottomSheet(isActive: self.$show) {
+                BottomSheet(isActive: self.$show, backgroundColor: UIColor.white) {
                     VStack(alignment: .center, spacing: 0) {
                         Button(action: {
                             withAnimation {
@@ -55,6 +55,7 @@ struct BottomSheet<Content:View> : View {
 
     @State private var draggedOffset = CGSize.zero
     @Binding var isActive: Bool
+    let backgroundColor: UIColor
     let content: () -> Content
 
     var body: some View {
@@ -79,13 +80,14 @@ struct BottomSheet<Content:View> : View {
         self.content()
             .transition(.move(edge: .bottom))
             .animation(.spring())
-            .offset(y: self.draggedOffset.height)
+            .padding(.bottom, -draggedOffset.height)
+            .background(Color(backgroundColor))
             .gesture(
                 DragGesture()
                     .onChanged { value in
                         if value.translation.height > 0 {
                             self.draggedOffset = value.translation
-                        } else if value.translation.height > -50 {
+                        } else if value.translation.height > -150 {
                             self.draggedOffset = value.translation
                         }
                 }
