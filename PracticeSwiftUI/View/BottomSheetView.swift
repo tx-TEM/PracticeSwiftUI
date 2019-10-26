@@ -62,9 +62,7 @@ struct BottomSheet<Content:View> : View {
             if isActive {
                 Color(.black).opacity(0.6)
                     .onTapGesture {
-                        withAnimation {
-                            self.isActive = false
-                        }
+                        self.dismissView()
                 }
             }
 
@@ -90,16 +88,21 @@ struct BottomSheet<Content:View> : View {
                         } else if value.translation.height > -50 {
                             self.draggedOffset = value.translation
                         }
-                        print(value.translation)
                 }
                 .onEnded(){ _ in
-                    if self.draggedOffset.height > 150 {
-                        withAnimation {
-                            self.isActive = false
-                        }
+                    if self.draggedOffset.height > 100 {
+                        self.dismissView()
+                    } else {
+                        self.draggedOffset = .zero
                     }
-                    self.draggedOffset = .zero
                 }
         )
+    }
+
+    func dismissView() {
+        withAnimation {
+            self.isActive = false
+        }
+        self.draggedOffset = .zero
     }
 }
