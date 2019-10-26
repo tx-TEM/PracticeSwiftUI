@@ -22,7 +22,7 @@ struct BottomSheetView: View {
                     })
                 }
 
-                BottomSheet(isActive: self.show, dissmissAction: { withAnimation { self.show.toggle() } }) {
+                BottomSheet(isActive: self.$show) {
                     VStack(alignment: .center, spacing: 0) {
                         Button(action: {
                             withAnimation {
@@ -53,25 +53,17 @@ struct BottomSheetView_Previews: PreviewProvider {
 
 struct BottomSheet<Content:View> : View {
 
-    var isActive = false
-    var dissmissAction: () -> ()
+    @Binding var isActive: Bool
     let content: () -> Content
-
-    init(isActive: Bool,
-         dissmissAction: @escaping () -> (),
-         @ViewBuilder content: @escaping () -> Content) {
-
-        self.isActive = isActive
-        self.dissmissAction = dissmissAction
-        self.content = content
-    }
 
     var body: some View {
         ZStack {
             if isActive {
                 Color(.black).opacity(0.6)
                     .onTapGesture {
-                        self.dissmissAction()
+                        withAnimation {
+                            self.isActive = false
+                        }
                 }
             }
 
