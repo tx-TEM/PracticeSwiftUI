@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct BottomSheetView: View {
+struct CustomSheetView: View {
     @State var show = false
 
     var body: some View {
@@ -15,14 +15,14 @@ struct BottomSheetView: View {
                         }
 
                     }, label: {
-                        Text("Show BottomSheet")
+                        Text("Show CustomSheet")
                             .foregroundColor(Color.white)
                             .frame(width: geometry.size.width, height: 30)
                             .background(Color.blue)
                     })
                 }
 
-                BottomSheet(isActive: self.$show, backgroundColor: UIColor.white) {
+                CustomSheet(isActive: self.$show, backgroundColor: UIColor.white) {
                     VStack(alignment: .center, spacing: 0) {
                         Button(action: {
                             withAnimation {
@@ -30,7 +30,7 @@ struct BottomSheetView: View {
                             }
 
                         }, label: {
-                            Text("Close BottomSheet")
+                            Text("Close CustomSheet")
                                 .foregroundColor(Color.white)
                                 .padding(.vertical, 16)
                                 .frame(width: geometry.size.width - 32, height: 50)
@@ -45,13 +45,13 @@ struct BottomSheetView: View {
     }
 }
 
-struct BottomSheetView_Previews: PreviewProvider {
+struct CustomSheetView_Previews: PreviewProvider {
     static var previews: some View {
-        BottomSheetView()
+        CustomSheetView()
     }
 }
 
-struct BottomSheet<Content:View> : View {
+struct CustomSheet<Content:View> : View {
 
     @State private var draggedOffset = CGSize.zero
     @Binding var isActive: Bool

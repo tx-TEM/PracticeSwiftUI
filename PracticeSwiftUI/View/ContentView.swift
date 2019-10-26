@@ -21,8 +21,8 @@ struct ContentView: View {
                         Text("ButtonExample")
                     }
 
-                    NavigationLink(destination: BottomSheetView()) {
-                        Text("BottomSheet")
+                    NavigationLink(destination: CustomSheetView()) {
+                        Text("CustomSheet")
                     }
                 }
             }.navigationBarTitle(Text("UIサンプル"), displayMode: .inline)
