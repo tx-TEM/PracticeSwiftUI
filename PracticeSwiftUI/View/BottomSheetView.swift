@@ -87,9 +87,17 @@ struct BottomSheet<Content:View> : View {
                     .onChanged { value in
                         if value.translation.height > 0 {
                             self.draggedOffset = value.translation
+                        } else if value.translation.height > -50 {
+                            self.draggedOffset = value.translation
                         }
+                        print(value.translation)
                 }
-                .onEnded(){ value in
+                .onEnded(){ _ in
+                    if self.draggedOffset.height > 150 {
+                        withAnimation {
+                            self.isActive = false
+                        }
+                    }
                     self.draggedOffset = .zero
                 }
         )
