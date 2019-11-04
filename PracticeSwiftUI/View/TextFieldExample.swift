@@ -9,28 +9,37 @@
 import SwiftUI
 
 struct TextFieldExample: View {
-    @State var text = ""
+    @State var text1 = ""
+    @State var text2 = ""
     @State var secureText = ""
 
 
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
-            TextField("text field", text: $text)
+            TextField("text field", text: $text1)
                 .padding(.horizontal, 32)
-                .background(Color(UIColor.white))
                 .padding(.top, 32)
 
 
             Color(UIColor.black).frame(height: 1)
-            .padding(.horizontal, 32)
+                .padding(.horizontal, 32)
+                .padding(.bottom, 32)
+
+            Text(verbatim: text2)
+
+            UIKitTextField(text: $text2, configure: {_ in })
+                .padding(.horizontal, 32)
+
+            Color(UIColor.black).frame(height: 1)
+                .padding(.horizontal, 32)
                 .padding(.bottom, 32)
 
             SecureField("secure field", text: $secureText)
-            .padding(.horizontal, 32)
-            .background(Color(UIColor.white))
+                .padding(.horizontal, 32)
+                .background(Color(UIColor.white))
 
             Color(UIColor.black).frame(height: 1)
-            .padding(.horizontal, 32)
+                .padding(.horizontal, 32)
 
             Spacer()
 
