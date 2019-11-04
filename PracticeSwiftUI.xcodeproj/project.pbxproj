@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		6F13FF31235F2B980040461A /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F13FF30235F2B980040461A /* TestView.swift */; };
 		6F48887123704B9D00AFDB7B /* UIKitTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F48887023704B9D00AFDB7B /* UIKitTextField.swift */; };
+		6F488873237063F300AFDB7B /* TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F488872237063F300AFDB7B /* TextView.swift */; };
 		6F642EBE236F6C6B000532CB /* TextFieldExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F642EBD236F6C6B000532CB /* TextFieldExample.swift */; };
 		6F9ABDF4235F31AE00F457AD /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F9ABDF3235F31AE00F457AD /* ButtonView.swift */; };
 		6F9B940D234627B500A737A9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F9B940C234627B500A737A9 /* AppDelegate.swift */; };
@@ -43,6 +44,7 @@
 /* Begin PBXFileReference section */
 		6F13FF30235F2B980040461A /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
 		6F48887023704B9D00AFDB7B /* UIKitTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIKitTextField.swift; sourceTree = "<group>"; };
+		6F488872237063F300AFDB7B /* TextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextView.swift; sourceTree = "<group>"; };
 		6F642EBD236F6C6B000532CB /* TextFieldExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldExample.swift; sourceTree = "<group>"; };
 		6F9ABDF3235F31AE00F457AD /* ButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
 		6F9B9409234627B500A737A9 /* PracticeSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PracticeSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -106,6 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				6F48887023704B9D00AFDB7B /* UIKitTextField.swift */,
+				6F488872237063F300AFDB7B /* TextView.swift */,
 			);
 			path = UIView;
 			sourceTree = "<group>";
@@ -310,6 +313,7 @@
 				6F48887123704B9D00AFDB7B /* UIKitTextField.swift in Sources */,
 				6F9B9411234627B500A737A9 /* ContentView.swift in Sources */,
 				6FF9A5012361D3FA009F7DEE /* CustomSheetView.swift in Sources */,
+				6F488873237063F300AFDB7B /* TextView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
