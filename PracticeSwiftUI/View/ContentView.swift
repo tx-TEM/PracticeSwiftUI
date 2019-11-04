@@ -24,6 +24,10 @@ struct ContentView: View {
                     NavigationLink(destination: CustomSheetView()) {
                         Text("CustomSheet")
                     }
+
+                    NavigationLink(destination: TextFieldExample()) {
+                        Text("TextFieldExample")
+                    }
                 }
             }.navigationBarTitle(Text("UIサンプル"), displayMode: .inline)
         }
