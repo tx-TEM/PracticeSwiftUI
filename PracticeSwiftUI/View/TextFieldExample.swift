@@ -18,9 +18,12 @@ struct TextFieldExample: View {
             TextField("text field", text: $text)
                 .padding(.horizontal, 32)
                 .background(Color(UIColor.white))
+                .padding(.top, 32)
+
 
             Color(UIColor.black).frame(height: 1)
             .padding(.horizontal, 32)
+                .padding(.bottom, 32)
 
             SecureField("secure field", text: $secureText)
             .padding(.horizontal, 32)
