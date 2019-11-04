@@ -4,6 +4,7 @@ import SwiftUI
 
 struct TextView: UIViewRepresentable {
     @Binding var text: String
+    let configure: (UITextView) -> ()
 
     func makeCoordinator() -> Coordinator {
         Coordinator(self)
@@ -11,11 +12,17 @@ struct TextView: UIViewRepresentable {
 
     func makeUIView(context: Context) -> UITextView {
         let textView = UITextView()
+        // デフォルト設定
         textView.delegate = context.coordinator
-        textView.isScrollEnabled = true
         textView.isEditable = true
+        textView.isScrollEnabled = true
         textView.isUserInteractionEnabled = true
+        textView.textContainerInset = UIEdgeInsets.zero
+        textView.textContainer.lineFragmentPadding = 0
         textView.textContainer.maximumNumberOfLines = 1
+
+        // カスタム設定
+        configure(textView)
         return textView
     }
 

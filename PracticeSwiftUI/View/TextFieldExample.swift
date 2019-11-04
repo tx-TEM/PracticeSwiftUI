@@ -34,9 +34,11 @@ struct TextFieldExample: View {
                 .padding(.horizontal, 32)
                 .padding(.bottom, 32)
 
-            TextView(text: $text3)
-                .padding(.horizontal, 32)
-                .frame(height: 32)
+            TextView(text: $text3) { textView in
+                textView.font = UIFont.systemFont(ofSize: 16, weight: .regular)
+            }
+            .padding(.horizontal, 32)
+            .frame(height: 24)
 
             Color(UIColor.black).frame(height: 1)
                 .padding(.horizontal, 32)
