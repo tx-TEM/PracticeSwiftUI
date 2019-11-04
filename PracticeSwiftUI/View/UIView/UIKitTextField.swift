@@ -24,20 +24,19 @@ struct UIKitTextField: UIViewRepresentable {
 extension UIKitTextField {
     final class Coordinator: NSObject, UITextFieldDelegate {
         private var textField: UIKitTextField
+        var input: String = ""
 
         init(_ textField: UIKitTextField) {
             self.textField = textField
         }
 
-        func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        func textFieldDidEndEditing(_ textField: UITextField) {
             if let text = textField.text {
-                // 変換中でないなら
-                if textField.markedTextRange == nil {
-                    self.textField.text = textField.text ?? ""
-                } else {
-
-                }
+                self.textField.text = text
             }
+        }
+
+        func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
             return true
         }
     }
