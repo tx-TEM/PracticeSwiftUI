@@ -93,13 +93,8 @@
 		6F13FF2F235F2B650040461A /* View */ = {
 			isa = PBXGroup;
 			children = (
+				6F48887423784D9900AFDB7B /* Page */,
 				6F48886F23704B8100AFDB7B /* UIView */,
-				6F9B9410234627B500A737A9 /* ContentView.swift */,
-				6F9ABDF3235F31AE00F457AD /* ButtonView.swift */,
-				6F13FF30235F2B980040461A /* TestView.swift */,
-				6FF9A5002361D3F9009F7DEE /* CustomSheetView.swift */,
-				6F642EBD236F6C6B000532CB /* TextFieldExample.swift */,
-				6FB2612A23670DD400C2489C /* LoadingHudView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -111,6 +106,19 @@
 				6F488872237063F300AFDB7B /* TextView.swift */,
 			);
 			path = UIView;
+			sourceTree = "<group>";
+		};
+		6F48887423784D9900AFDB7B /* Page */ = {
+			isa = PBXGroup;
+			children = (
+				6F9B9410234627B500A737A9 /* ContentView.swift */,
+				6F9ABDF3235F31AE00F457AD /* ButtonView.swift */,
+				6F13FF30235F2B980040461A /* TestView.swift */,
+				6FF9A5002361D3F9009F7DEE /* CustomSheetView.swift */,
+				6F642EBD236F6C6B000532CB /* TextFieldExample.swift */,
+				6FB2612A23670DD400C2489C /* LoadingHudView.swift */,
+			);
+			path = Page;
 			sourceTree = "<group>";
 		};
 		6F9B9400234627B400A737A9 = {
