@@ -8,7 +8,9 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct ContentView<Content: View>: View {
+    @State var foregroundView: () -> Content
+
     var body: some View {
         ZStack {
             NavigationView {
@@ -30,18 +32,19 @@ struct ContentView: View {
                             Text("TextFieldExample")
                         }
 
-                        NavigationLink(destination: LoadingHudView()) {
-                            Text("LoadingHudView")
+                        NavigationLink(destination: LoadingHudView(foregroundView: $foregroundView)) {
+                            Text("TextFieldExample")
                         }
                     }
                 }.navigationBarTitle(Text("UIサンプル"), displayMode: .inline)
             }
+            Color(.black).opacity(0.6).edgesIgnoringSafeArea(.all)
         }
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView(foregroundView: { EmptyView() })
     }
 }

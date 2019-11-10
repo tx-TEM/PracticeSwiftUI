@@ -1,11 +1,17 @@
 import SwiftUI
 
-struct LoadingHudView: View {
+struct LoadingHudView<Content: View>: View {
     @State var isLoading = false
+    @Binding var foregroundView: () -> Content
 
     var body: some View {
         VStack(alignment: .center) {
-            SimpleLargeButton()
+            Button(action: {
+                print("tap")
+            }, label: {
+                Text("Show Loading")
+            })
+
             Spacer()
         }
     }
@@ -16,15 +22,3 @@ struct LoadingHudView: View {
 //        LoadingHud()
 //    }
 //}
-
-struct LoadingHud: View {
-    @Binding var isLoading: Bool
-
-    init(isLoading: Binding<Bool>) {
-        _isLoading = isLoading
-    }
-
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello World!"/*@END_MENU_TOKEN@*/)
-    }
-}
