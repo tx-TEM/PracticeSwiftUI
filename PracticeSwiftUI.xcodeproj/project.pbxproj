@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		6F13FF31235F2B980040461A /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F13FF30235F2B980040461A /* TestView.swift */; };
+		6F444DDE238FEACE0040F093 /* CheckLifecycle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F444DDD238FEACE0040F093 /* CheckLifecycle.swift */; };
 		6F48887123704B9D00AFDB7B /* UIKitTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F48887023704B9D00AFDB7B /* UIKitTextField.swift */; };
 		6F488873237063F300AFDB7B /* TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F488872237063F300AFDB7B /* TextView.swift */; };
 		6F642EBE236F6C6B000532CB /* TextFieldExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F642EBD236F6C6B000532CB /* TextFieldExample.swift */; };
@@ -43,6 +44,7 @@
 
 /* Begin PBXFileReference section */
 		6F13FF30235F2B980040461A /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
+		6F444DDD238FEACE0040F093 /* CheckLifecycle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckLifecycle.swift; sourceTree = "<group>"; };
 		6F48887023704B9D00AFDB7B /* UIKitTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIKitTextField.swift; sourceTree = "<group>"; };
 		6F488872237063F300AFDB7B /* TextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextView.swift; sourceTree = "<group>"; };
 		6F642EBD236F6C6B000532CB /* TextFieldExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldExample.swift; sourceTree = "<group>"; };
@@ -117,6 +119,7 @@
 				6FF9A5002361D3F9009F7DEE /* CustomSheetView.swift */,
 				6F642EBD236F6C6B000532CB /* TextFieldExample.swift */,
 				6FB2612A23670DD400C2489C /* LoadingHudView.swift */,
+				6F444DDD238FEACE0040F093 /* CheckLifecycle.swift */,
 			);
 			path = Page;
 			sourceTree = "<group>";
@@ -314,6 +317,7 @@
 			files = (
 				6F13FF31235F2B980040461A /* TestView.swift in Sources */,
 				6F642EBE236F6C6B000532CB /* TextFieldExample.swift in Sources */,
+				6F444DDE238FEACE0040F093 /* CheckLifecycle.swift in Sources */,
 				6F9B940D234627B500A737A9 /* AppDelegate.swift in Sources */,
 				6FB2612B23670DD400C2489C /* LoadingHudView.swift in Sources */,
 				6F9ABDF4235F31AE00F457AD /* ButtonView.swift in Sources */,

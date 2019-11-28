@@ -35,10 +35,17 @@ struct ContentView<Content: View>: View {
                         NavigationLink(destination: LoadingHudView(foregroundView: $foregroundView)) {
                             Text("TextFieldExample")
                         }
+
+                        NavigationLink(destination: CheckLifecycleView(viewModel: CheckLifeCycleViewModel())) {
+                            Text("ライフサイクルのテスト用のview")
+                        }
+
                     }
+                }.onAppear {
+                    print("NavigationLink 表示")
+                    print("---------")
                 }.navigationBarTitle(Text("UIサンプル"), displayMode: .inline)
             }
-            Color(.black).opacity(0.6).edgesIgnoringSafeArea(.all)
         }
     }
 }
