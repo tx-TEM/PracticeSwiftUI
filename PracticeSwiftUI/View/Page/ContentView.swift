@@ -40,6 +40,10 @@ struct ContentView<Content: View>: View {
                             Text("ライフサイクルのテスト用のview")
                         }
 
+                        NavigationLink(destination: WebViewExampleView(viewModel: WebViewExampleViewModel())) {
+                            Text("WebViewExaple")
+                        }
+
                     }
                 }.onAppear {
                     print("NavigationLink 表示")
