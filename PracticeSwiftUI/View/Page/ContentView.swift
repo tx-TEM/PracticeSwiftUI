@@ -8,54 +8,46 @@
 
 import SwiftUI
 
-struct ContentView<Content: View>: View {
-    @State var foregroundView: () -> Content
-
+struct ContentView: View {
     var body: some View {
         ZStack {
-            NavigationView {
-                VStack(alignment: .center) {
-                    List {
-                        NavigationLink(destination: TestView()) {
-                            Text("TestView")
-                        }
-
-                        NavigationLink(destination: ButtonView()) {
-                            Text("ButtonExample")
-                        }
-
-                        NavigationLink(destination: CustomSheetView()) {
-                            Text("CustomSheet")
-                        }
-
-                        NavigationLink(destination: TextFieldExample()) {
-                            Text("TextFieldExample")
-                        }
-
-                        NavigationLink(destination: LoadingHudView(foregroundView: $foregroundView)) {
-                            Text("TextFieldExample")
-                        }
-
-                        NavigationLink(destination: CheckLifecycleView(viewModel: CheckLifeCycleViewModel())) {
-                            Text("ライフサイクルのテスト用のview")
-                        }
-
-                        NavigationLink(destination: WebViewExampleView(viewModel: WebViewExampleViewModel())) {
-                            Text("WebViewExaple")
-                        }
-
+            VStack(alignment: .center) {
+                List {
+                    NavigationLink(destination: TestView()) {
+                        Text("TestView")
                     }
-                }.onAppear {
-                    print("NavigationLink 表示")
-                    print("---------")
-                }.navigationBarTitle(Text("UIサンプル"), displayMode: .inline)
-            }
+
+                    NavigationLink(destination: ButtonView()) {
+                        Text("ButtonExample")
+                    }
+
+                    NavigationLink(destination: CustomSheetView()) {
+                        Text("CustomSheet")
+                    }
+
+                    NavigationLink(destination: TextFieldExample()) {
+                        Text("TextFieldExample")
+                    }
+
+                    NavigationLink(destination: CheckLifecycleView(viewModel: CheckLifeCycleViewModel())) {
+                        Text("ライフサイクルのテスト用のview")
+                    }
+
+                    NavigationLink(destination: WebViewExampleView(viewModel: WebViewExampleViewModel())) {
+                        Text("WebViewExaple")
+                    }
+
+                }
+            }.onAppear {
+                print("NavigationLink 表示")
+                print("---------")
+            }.navigationBarTitle(Text("UIサンプル"), displayMode: .inline)
         }
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView(foregroundView: { EmptyView() })
+        ContentView()
     }
 }
