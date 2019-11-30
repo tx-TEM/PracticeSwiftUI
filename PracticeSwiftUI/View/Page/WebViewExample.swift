@@ -2,10 +2,17 @@ import SwiftUI
 import Combine
 import WebKit
 
+final class OAuthHandler {
+    static let shared = OAuthHandler()
+    weak var handlerWebView: WKWebView?
+}
+
 final class WebViewExampleViewModel: ObservableObject {
+    private let oauthHandler = OAuthHandler.shared
 
     var wkwebView: WKWebView? {
         didSet {
+            self.oauthHandler.handlerWebView = self.wkwebView
             self.wkwebView?.load(URLRequest(url: URL(string: "https://www.apple.com")!))
         }
     }
